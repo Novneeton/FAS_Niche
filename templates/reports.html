@@ -79,76 +79,53 @@
               <ul class="sidebar-menu" id="nav-accordion">
 
               	  <p class="centered"><a href="profile.html"><img src="/static/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Novneet Patnaik</h5>
+              	  <h5 class="centered">Admin</h5>
 
                   <li class="mt">
-                      <a href="index.html">
+                      <a class="active" href="index">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:" >
                           <i class="fa fa-desktop"></i>
                           <span>Templates</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="templates.html">Create New</a></li>
-                          <li><a  href="buttons.html">All Templates</a></li>
-                          <li><a  href="panels.html">Modify Database</a></li>
+                          <li><a  href="templates">Create/Edit Templates</a></li>
                       </ul>
                   </li>
 
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Extra Pages</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="blank.html">Blank Page</a></li>
-                          <li><a  href="login.html">Login</a></li>
-                          <li><a  href="lock_screen.html">Lock Screen</a></li>
-                      </ul>
-                  </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-tasks"></i>
                           <span>History</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="form_component.html">Form Components</a></li>
+                          <li><a  href="form_component">Activities</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:" >
+                      <a href="javascript:;" >
                           <i class="fa fa-th"></i>
                           <span>Database</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="basic_table.html">Basic Table</a></li>
-                          <li><a  href="responsive_table.html">Responsive Table</a></li>
+                          <li><a  href="basic_table">Database View</a></li>
+                          <li><a  href="create_collection">Create a Collection</a></li>
                       </ul>
                   </li>
+
                   <li class="sub-menu">
-                      <a href="javascript:" >
-                          <i class=" fa fa-bar-chart-o"></i>
-                          <span>Charts</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="chartjs.html">Chartjs</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:" >
+                      <a href="javascript:;" >
                           <i class="fa fa-cogs"></i>
                           <span>Settings</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="calendar.html">Calendar</a></li>
-                          <li><a  href="gallery.html">Gallery</a></li>
-                          <li><a  href="todo_list.html">Todo List</a></li>
+                          <li><a  href="admin_settings">Admin Settings</a></li>
+                          <li><a  href="help">Support</a></li>
                       </ul>
                   </li>
 
@@ -178,10 +155,9 @@
 							    <label for='op2'>Clorox Report 2</label>
 							    <input id='op3' name='op3' type='checkbox'/>
 							    <label for='op3'>Clorox Report 3</label>
-{#							    <a href="https://drive.google.com/file/d/1vI_AuLcAVVMvvSCq9rRVadcmUkTJ7679/view?usp=sharing" download="clorox_empty.csv">#}
+
 							    <input class = 'button1'type='submit' value='Download!' id='submit1' onchange="download(this)"/>
-{#                                    <input type='submit' value='view!' id='result1'/>#}
-{#                                    </a>#}
+
                                 <input class = 'button2 'type='submit' value='view!' id="view_reports"/>
                                  <script>
                                 function download(file, text) {
