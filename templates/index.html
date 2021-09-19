@@ -8,25 +8,19 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Niche</title>
+    <title>NICHE</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="/static/css/bootstrap.css" rel="stylesheet">
-    <!--external css-->
-
-      <link href="{{ url_for('static', filename='/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
       <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.css">
-      <link rel="stylesheet" href="/static/css/zabuto_calendar.css">
       <link rel="stylesheet" href="/static/js/gritter/css/jquery.gritter.css">
       <link rel="stylesheet" href="/static/lineicons/style.css">
 
-    
+
     <!-- Custom styles for this template -->
     <link href="/static/css/style.css" rel="stylesheet">
     <link href="/static/css/style-responsive.css" rel="stylesheet">
 
     <script src="/static/js/chart-master/Chart.js"></script>
-    
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
 
@@ -48,33 +42,14 @@
             <!--logo start-->
             <a href="index.html" class="logo"><b>NICHE</b></a>
             <!--logo end-->
-            <div class="nav notify-row" id="top_menu">
-                <!--  notification start -->
-                <ul class="nav top-menu">
-                    <!-- settings start -->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-                            <i class="fa fa-tasks"></i>
-                            <span class="badge bg-theme"></span>
-                        </a>
-                        <ul class="dropdown-menu extended tasks-bar">
-                            <li class="external">
-                                <a href="#">No Tasks</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- settings end -->
-                </ul>
-                <!--  notification end -->
-            </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="">Logout</a></li>
             	</ul>
             </div>
         </header>
       <!--header end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
@@ -83,210 +58,202 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              
-              	  <p class="centered"><a href="profile.html"><img src="/static/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+
+              	  <p class="centered"><a href="/templates/profile"><img src="/static/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Admin</h5>
-              	  	
+
                   <li class="mt">
-                      <a class="active" href="/templates/index">
+                      <a class="active" href="/templates/login_data">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
-
                   <li class="sub-menu">
                       <a href="javascript:" >
-                          <i class="fa fa-desktop"></i>
-                          <span>Templates</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="/templates/templates">Create/Edit Templates</a></li>
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-tasks"></i>
-                          <span>History</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="form_component">Activities</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
                           <i class="fa fa-th"></i>
                           <span>Database</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="/templates/basic_table">Database View</a></li>
-                          <li><a  href="/templates/create_collection">Create a Collection</a></li>
                       </ul>
                   </li>
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-cogs"></i>
-                          <span>Settings</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="admin_settings">Admin Settings</a></li>
-                          <li><a  href="help">Support</a></li>
-                      </ul>
-                  </li>
 
               </ul>
               <!-- sidebar menu end-->
           </div>
       </aside>
       <!--sidebar end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-
-              <div class="row">
+              <div class="row" style="width: 170%;">
                   <div class="col-lg-9 main-chart">
-                  
-                  	<div class="row mtbox">
-                  		<div class="col-md-2 col-sm-2 box0">
+
+                  	<div class="row mtbox">.
+                        <div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
 					  			<span class="li_heart"></span>
-					  			<h3>User</h3>
+					  			<h3>Client</h3>
                   			</div>
-                            <button id="clientButton" class="float-left submit-button" >User Management</button>
-
+                            <button id="clientButton" class="button" >Go To Client Management</button>
                             <script type="text/javascript">
                                 document.getElementById("clientButton").onclick = function () {
-                                    location.href = "/templates/client";
+                                    location.href = "/templates/client_management";
                                 };
                             </script>
                   		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="li_vallet"></span>
-					  			<h3>Auditors</h3>
-                  			</div>
-                            <button id="auditorButton" class="float-left submit-button" >Auditor Management</button>
 
-                            <script type="text/javascript">
-                                document.getElementById("auditorButton").onclick = function () {
-                                    location.href = "/templates/auditor";
-                                };
-                            </script>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="li_user"></span>
-					  			<h3>Supervisors</h3>
-                  			</div>
-                            <button id="supervisorButton" class="float-left submit-button" >Supervisor Management</button>
-
-                            <script type="text/javascript">
-                                document.getElementById("supervisorButton").onclick = function () {
-                                    location.href = "/templates/supervisor";
-                                };
-                            </script>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="li_news"></span>
-					  			<h3>Surveys</h3>
-                  			</div>
-                            <button type="button">Survey Index</button>
-                  		</div>
                         <div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
-					  			<span class="li_lock"></span>
-					  			<h3>Admins</h3>
+					  			<span class="li_clock"></span>
+					  			<h3>Audit Details</h3>
                   			</div>
-                            <button id="roleButton" class="float-left submit-button" >Role Management</button>
+                            <button id="visitButton" class="button" >Go To Project Management</button>
+                            <script type="text/javascript">
+                                document.getElementById("visitButton").onclick = function () {
+                                    location.href = "/templates/project_management";
+                                };
+                            </script>
+                  		</div>
 
+                        <div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="li_t-shirt"></span>
+					  			<h3>Roles</h3>
+                  			</div>
+                            <button id="roleButton" class="button" >Go To Role Management</button>
                             <script type="text/javascript">
                                 document.getElementById("roleButton").onclick = function () {
-                                    location.href = "/templates/profile";
+                                    location.href = "/templates/role_options";
                                 };
                             </script>
                   		</div>
+
                         <div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
-					  			<span class="li_note"></span>
-					  			<h3>Reports</h3>
+					  			<span class="li_bubble"></span>
+					  			<h3>Users</h3>
                   			</div>
-                            <button id="reportsButton" class="float-left submit-button" >Reports Management</button>
-
+                            <button id="userButton" class="button" >Go to User Management</button>
                             <script type="text/javascript">
-                                document.getElementById("reportsButton").onclick = function () {
-                                    location.href = "/templates/reports";
+                                document.getElementById("userButton").onclick = function () {
+                                    location.href = "/templates/user_options";
                                 };
                             </script>
                   		</div>
 
-                  	
-                  	</div><!-- /row mt -->	
-                  
-                      
+                        <div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="li_news"></span>
+					  			<h3>Reports</h3>
+                  			</div>
+                            <button id="reportButton" class="button" >Go to Report Management</button>
+                            <script type="text/javascript">
+                                document.getElementById("reportButton").onclick = function () {
+                                    location.href = "/templates/report_options";
+                                };
+                            </script>
+                  		</div>
 
+                        <div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="li_stack"></span>
+					  			<h3>Uploads</h3>
+                  			</div>
+                            <button id="masterButton" class="button" >Go to Master Uploads</button>
+                            <script type="text/javascript">
+                                document.getElementById("masterButton").onclick = function () {
+                                    location.href = "/templates/master_uploads";
+                                };
+                            </script>
+                  		</div>
 
+                        <div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="li_world"></span>
+					  			<h3>Mail</h3>
+                  			</div>
+                            <button id="mailButton" class="button" >Mail Body Creation</button>
+                            <script type="text/javascript">
+                                document.getElementById("mailButton").onclick = function () {
+                                    location.href = "/templates/mail_body";
+                                };
+                            </script>
+                  		</div>
+                  	</div><!-- /row mt -->
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->
-                  
-                  
+              </div>
+
+            <div class="form-horizontal style-form">
+             <div class="form-panel">
+              <div class="form-group">
+              <div class="col-sm-10">
+                  <h4><i class="fa fa-angle-right"></i> Clients - {{ output_data['client_count'] }} </h4>
+                  <button id="clientButton1" class="button2">Client Page</button>
+                        <script type="text/javascript">
+                            document.getElementById("clientButton1").onclick = function () {
+                                location.href = "/templates/basic_client_table";
+                            };
+                        </script>
+              </div>
+              </div>
+              <div class="form-group">
+              <div class="col-sm-10">
+                  <h4><i class="fa fa-angle-right"></i> Reports - {{ output_data['report_count'] }} </h4>
+                  <button id="reportButton1" class="button2" disabled>Reports List</button>
+                        <script type="text/javascript">
+                            document.getElementById("reportButton1").onclick = function () {
+                                location.href = "/templates/mail_body";
+                            };
+                        </script>
+              </div>
+              </div>
+              <div class="form-group">
+              <div class="col-sm-10">
+                  <h4><i class="fa fa-angle-right"></i> Templates - {{ output_data['template_count'] }} </h4>
+                  <button id="templatesButton1" class="button2" disabled>Templates List</button>
+                        <script type="text/javascript">
+                            document.getElementById("templatesButton1").onclick = function () {
+                                location.href = "/templates/mail_body";
+                            };
+                        </script>
+              </div>
+              </div>
+              <div class="form-group">
+              <div class="col-sm-10">
+                  <h4><i class="fa fa-angle-right"></i> Live Audits - 0 </h4>
+                  <button id="auditorButton1" class="button2" disabled>Auditors</button>
+                        <script type="text/javascript">
+                            document.getElementById("auditorButton1").onclick = function () {
+                                location.href = "/templates/mail_body";
+                            };
+                        </script>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </section><! --/wrapper -->
+      </section><!-- /MAIN CONTENT -->
+
       <!-- **********************************************************************************************************************************************************
       RIGHT SIDEBAR CONTENT
-      *********************************************************************************************************************************************************** -->                  
-                  
-                  <div class="col-lg-3 ds">
-                    <!--COMPLETED ACTIONS DONUTS CHART-->
-						<h3>NOTIFICATIONS</h3>
-                                        
-                      <!-- First Action -->
-                      <div class="desc">
-                      	<div class="thumb">
-                      		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                      	</div>
-                      	<div class="details">
-                      		<p><muted> </muted><br/>
-                      		   <a href="#"></a> No Notifications<br/>
-                      		</p>
-                      	</div>
-                      </div>
-
-
-                        <!-- CALENDAR-->
-                        <div id="calendar" class="mb">
-                            <div class="panel green-panel no-margin">
-                                <div class="panel-body">
-                                    <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
-                                        <div class="arrow"></div>
-                                        <h3 class="popover-title" style="disadding: none;"></h3>
-                                        <div id="date-popover-content" class="popover-content"></div>
-                                    </div>
-                                    <div id="my-calendar"></div>
-                                </div>
-                            </div>
-                        </div><!-- / calendar -->
-                      
-                  </div><!-- /col-lg-3 -->
-              </div><! --/row -->
-
-          </section>
-      </section>
+      *********************************************************************************************************************************************************** -->
 
       <!--main content end-->
       <!--footer start-->
-      <footer class="site-footer">
+      <footer>
           <div class="text-center">
               2021 - NICHE
-              <a href="index#" class="go-top">
-                  <i class="fa fa-angle-up"></i>
-              </a>
           </div>
       </footer>
       <!--footer end-->
   </section>
+
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="/static/js/jquery.js"></script>
@@ -297,73 +264,58 @@
     <script src="/static/js/jquery.nicescroll.js" type="text/javascript"></script>
     <script src="/static/js/jquery.sparkline.js"></script>
 
-
     <!--common script for all pages-->
     <script src="/static/js/common-scripts.js"></script>
-    
+
     <script type="text/javascript" src="/static/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="/static/js/gritter-conf.js"></script>
 
     <!--script for this page-->
     <script src="/static/js/sparkline-chart.js"></script>
-	<script src="/static/js/zabuto_calendar.js"></script>
-	
-	<script type="text/javascript">
-        $(document).ready(function () {
-        var unique_id = $.gritter.add({
-            // (string | mandatory) the heading of the notification
-            title: 'Welcome to Niche!',
-            // (string | mandatory) the text inside the notification
-            text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo.</a>.',
-            // (string | optional) the image to display on the left
-            image: '/static/img/ui-sam.jpg',
-            // (bool | optional) if you want it to fade out on its own or just sit there
-            sticky: true,
-            // (int | optional) the time you want it to be alive for before fading out
-            time: '',
-            // (string | optional) the class name you want to apply to that specific message
-            class_name: 'my-sticky-class'
-        });
-
-        return false;
-        });
-	</script>
-	
-	<script type="application/javascript">
-        $(document).ready(function () {
-            $("#date-popover").popover({html: true, trigger: "manual"});
-            $("#date-popover").hide();
-            $("#date-popover").click(function (e) {
-                $(this).hide();
-            });
-        
-            $("#my-calendar").zabuto_calendar({
-                action: function () {
-                    return myDateFunction(this.id, false);
-                },
-                action_nav: function () {
-                    return myNavFunction(this.id);
-                },
-                ajax: {
-                    url: "show_data.php?action=1",
-                    modal: true
-                },
-                legend: [
-                    {type: "text", label: "Special event", badge: "00"},
-                    {type: "block", label: "Regular event", }
-                ]
-            });
-        });
-        
-        
-        function myNavFunction(id) {
-            $("#date-popover").hide();
-            var nav = $("#" + id).data("navigation");
-            var to = $("#" + id).data("to");
-            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
-        }
-    </script>
-  
 
   </body>
+
+<style>
+ .button {
+              background-color: #68dff0;
+              border: none;
+              color: white;
+              padding: 17px 30px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+            }
+
+  .button2 {
+              background-color: #48ca1f;
+              border: none;
+              color: white;
+              padding: 10px 20px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 12px;
+            }
+
+.addMore{
+  border: none;
+  width: 200px;
+  height: 32px;
+  background-color: #68dff0;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+.addMore:hover{
+  border: 1px solid #888;
+  background-color: #ffff;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+</style>
 </html>

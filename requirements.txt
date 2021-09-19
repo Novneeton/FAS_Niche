@@ -1,7 +1,15 @@
 Flask~=1.1.2
-pymongo~=3.11.3
-pandas~=1.2.3
+pymongo
+pandas~=1.0.5
 datapane~=0.10.4
 seaborn~=0.11.1
 matplotlib~=3.4.0
 lib~=3.0.0
+dnspython~=2.1.0
+XlsxWriter~=1.2.8
+openpyxl~=2.6.2
+boto3~=1.9.187
+requests~=2.25.1
+beautifulsoup4~=4.9.3
+Werkzeug~=0.15.4
+numpy~=1.19.3

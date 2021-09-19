@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=D:\projects\FAS\venv
+set VIRTUAL_ENV=C:\Users\Novneet Patnaik\Desktop\FAS\FAS\novneeton.github.io\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

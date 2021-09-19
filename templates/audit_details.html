@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <meta name="author" content="Dashboard">
+      <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+      <title>NICHE</title>
+      <!-- Bootstrap core CSS -->
+      <link href="/static/css/bootstrap.css" rel="stylesheet">
+      <!--external css-->
+      <link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet" />
+      <!-- Custom styles for this template -->
+      <link href="/static/css/style.css" rel="stylesheet">
+      <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+   </head>
+   <body>
+      <section id="container" >
+         <!-- **********************************************************************************************************************************************************
+            TOP BAR CONTENT & NOTIFICATIONS
+            *********************************************************************************************************************************************************** -->
+         <!--header start-->
+         <header class="header black-bg">
+            <div class="sidebar-toggle-box">
+               <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+            </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>NICHE</b></a>
+            <!--logo end-->
+
+            <div class="top-menu">
+               <ul class="nav pull-right top-menu">
+                  <li><a class="logout" href="/templates/login">Logout</a></li>
+               </ul>
+            </div>
+         </header>
+         <!--header end-->
+         <!-- **********************************************************************************************************************************************************
+            MAIN SIDEBAR MENU
+            *********************************************************************************************************************************************************** -->
+         <!--sidebar start-->
+         <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+
+              	  <p class="centered"><a href="/templates/profile"><img src="/static/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered">Admin</h5>
+
+                  <li class="mt">
+                      <a class="active" href="/templates/login_data">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-th"></i>
+                          <span>Database</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="/templates/basic_table">Database View</a></li>
+                      </ul>
+                  </li>
+
+
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+         <!--sidebar end-->
+         <!-- **********************************************************************************************************************************************************
+            MAIN CONTENT
+            *********************************************************************************************************************************************************** -->
+         <!--main content start-->
+         <section id="main-content">
+            <section class="wrapper">
+            <h3><i class="fa fa-angle-right"></i> Audit Details</h3>
+            <div class="form-panel">
+
+                <form class="form-horizontal style-form">
+                <div class="form-group">
+                  <div class="col-sm-10">
+                      <h4><i class="fa fa-angle-right"></i> {{ output_data['name']}} </h4>
+                  </div>
+                </div>
+                </form>
+            </div>
+                     <div class="form-panel">
+                        <h4 class="mb"><i class="fa fa-angle-right"></i> Add Audit Dates</h4>
+                        <form class="form-horizontal style-form" action="http://127.0.0.1:5000/handle_client_data?'client_name'=+{{ output_data['name'] }}" method="post">
+                          {% for row in output_data['countries'] %}
+                           <div>
+                            <div class="form-group">
+                              <div class="col-sm-10">
+                                  <h5><i class="fa fa-angle-right"></i> {{row}} </h5>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="selectNumber" class="col-sm-2 col-sm-2 control-label">Frequency</label>
+                              <div class="col-sm-10">
+                                  <input id="selectNumber" name="frequency" type='number' size="30">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <div id="outputArea"></div>
+                                </div>
+                            </div>
+                          </div>
+                        <script>
+                        function goBack()
+                        {
+                          window.history.back();
+                        }
+                        </script>
+
+                               <button class="button" name="button1" value="upload" type="submit" href="#">Save</button>
+                               <button class="button1" type="button" onclick="goBack()">Go Back</button>
+                        </form>
+                     </div>
+            <script>
+                $("#selectNumber").change(function() {
+                  var htmlString = "";
+                  var len = $(this).val();
+                  {#<form action='http://127.0.0.1:5000/handle_data' method='post'>#}
+                  htmlString += "<thead><tr><th>From</th><th>To</th></tr></thead>";
+                  for (var i = 0; i < len; i++)
+                  {
+
+                    htmlString += "<tr><td><input type='date' class='email' required></td><hr><td><input type='date' class='name' required></td></tr>";
+
+                  }
+                  {#htmlString += "<hr><button class='button' name='button1' type='submit'>Save the cycle</button></form>"#}
+
+
+                  $("#outputArea").html(htmlString);
+                })
+            </script>
+            </section>
+            <! --/wrapper -->
+         </section>
+
+         <!-- /MAIN CONTENT -->
+         <!--main content end-->
+         <!--footer start-->
+         <footer >
+            <div class="text-center">
+               2021 - NICHE
+            </div>
+         </footer>
+         <!--footer end-->
+      </section>
+   </body>
+   <style>
+    .button {
+              background-color: #68dff0;
+              border: none;
+              color: white;
+              padding: 17px 30px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+            }
+        .button1 {
+          background-color: #111313;
+          border: none;
+          color: white;
+          padding: 17px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+        }
+
+                        .button2 {
+          background-color: #5bec48;
+          border: none;
+          color: white;
+          padding: 17px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+        }
+        </style>
+
+</html>

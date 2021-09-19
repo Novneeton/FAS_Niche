@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{all, axios, bootstrap, bootswatch, chart.js, feather-icons, font-awesome, highcharts, jquery, jquery-1.12.4, jquery-1.9.1, jquery-3.4.1, jquery.dataTables, jquerysctipttop, pusher, twitter-bootstrap}" />
+    <file url="PROJECT" libraries="{@types/multiselect}" />
+    <excludedPredefinedLibrary name="HTML" />
+  </component>
+</project>

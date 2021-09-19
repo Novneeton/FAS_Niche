@@ -5,8 +5,8 @@ import json
 from flask_jwt_extended import (create_access_token, create_refresh_token, jwt_required, jwt_refresh_token_required,
                                 get_jwt_identity, get_raw_jwt)
 
-from lib.AppException import AppException
-from . import api
+# from lib.AppException import AppException
+# from . import api
 # from models.User import User, UserSchema
 
 
@@ -62,33 +62,34 @@ from . import api
 
 class UserAuthResource(Resource):
     def post(self):
-        user_data = request.json
-        print("Auth data")
-        print(user_data)
-        print("----------")
-        if 'frontend_userid' not in user_data:
-            raise AppException("front end user id is missing", 'validation_error', 400)
-        if user_data['frontend_userid'] == '':
-            raise AppException("front end user id is missing", 'validation_error', 400)
-        user = User(username=user_data['uid'], password=user_data['password'])
-        res = user.login()
-        if res['success'] == True:
-            loggedin_user = res['user']
-            response_json = {
-                "access_token": res['access_token'],
-                "refresh_token": res['refresh_token'],
-                "expires": str(2 * 60 * 60 * 1000)
-            }
-            if loggedin_user.to_document()['consumer_id'] != "":
-                response_json['consumer_id'] = loggedin_user.to_document()['consumer_id']
-            return response_json, 200
-
-        else:
-            return {
-                       "status": 401,
-                       "msg": "Authentication failed. Please check your UID and password",
-                       "msg_code": "auth_failed",
-                   }, 401
+        # user_data = request.json
+        # print("Auth data")
+        # print(user_data)
+        # print("----------")
+        # if 'frontend_userid' not in user_data:
+        #     raise AppException("front end user id is missing", 'validation_error', 400)
+        # if user_data['frontend_userid'] == '':
+        #     raise AppException("front end user id is missing", 'validation_error', 400)
+        # user = User(username=user_data['uid'], password=user_data['password'])
+        # res = user.login()
+        # if res['success'] == True:
+        #     loggedin_user = res['user']
+        #     response_json = {
+        #         "access_token": res['access_token'],
+        #         "refresh_token": res['refresh_token'],
+        #         "expires": str(2 * 60 * 60 * 1000)
+        #     }
+        #     if loggedin_user.to_document()['consumer_id'] != "":
+        #         response_json['consumer_id'] = loggedin_user.to_document()['consumer_id']
+        #     return response_json, 200
+        #
+        # else:
+        #     return {
+        #                "status": 401,
+        #                "msg": "Authentication failed. Please check your UID and password",
+        #                "msg_code": "auth_failed",
+        #            }, 401
+        pass
 
 
 # class ConsumerListResource(Resource):

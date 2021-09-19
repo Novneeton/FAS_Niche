@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>Niche</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+
+      <link href="{{ url_for('static', filename='/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+      <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.css">
+      <link rel="stylesheet" href="/static/css/zabuto_calendar.css">
+      <link rel="stylesheet" href="/static/js/gritter/css/jquery.gritter.css">
+      <link rel="stylesheet" href="/static/lineicons/style.css">
+      <head>
+      <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+    </head>
+
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap core CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/flatly/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- JQuery library -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
+
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/style-responsive.css" rel="stylesheet">
+
+    <script src="/static/js/chart-master/Chart.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+  </head>
+
+
+  <body>
+
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>NICHE</b></a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- settings start -->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                            <i class="fa fa-tasks"></i>
+                            <span class="badge bg-theme"></span>
+                        </a>
+                        <ul class="dropdown-menu extended tasks-bar">
+                            <li class="external">
+                                <a href="#">No Tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- settings end -->
+                </ul>
+                <!--  notification end -->
+            </div>
+            <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="/templates/login">Logout</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end-->
+
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+
+              	  <p class="centered"><a href=""><img src="/static/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered">Admin</h5>
+
+                  <li class="mt">
+                      <a class="active" href="/templates/login_data">
+                          <i class="fa fa-dashboard"></i>
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-th"></i>
+                          <span>Database</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="/templates/basic_table">Database View</a></li>
+                      </ul>
+                  </li>
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+
+          <section class="wrapper">
+          <h1>Database</h1>
+          <div style="overflow-x:auto;">
+            <span class="counter pull-right"></span>
+            <table class="table table-hover table-bordered results" id="example">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Country</th>
+                <th>Submit</th>
+            </tr>
+            </thead>
+            <tbody>
+
+                {% for row in output_data %}
+{#                    //<-- Using these '{%' and '%}' we can write our python code -->#}
+                    <tr>
+                        <form class="form-horizontal style-form" action="{{ url_for('handle_data') }}" method="post">
+                        <td>{{row['_id']}}</td>
+                        <td>{{row['name']}}</td>
+                        <td>{{row['email']}}</td>
+                        <td>{{row['password']}}</td>
+                        <td>{{row['country']}}</td>
+                        <td><input type=submit ></td>
+                            </form>
+                    </tr>
+
+                {% endfor %}
+{#                <-- Because it is flask framework there would be other keywords like 'endfor'   -->#}
+            </tbody>
+        </table>
+
+          </div>
+        </section>
+
+      </section>
+
+  <script src="/static/js/bstable.js"></script>
+
+	<script>
+		var editableTable =new BSTable("example");
+        editableTable.init();
+
+        var editableTable = new BSTable("example",
+        {
+            editableColumns:"1,2,3,4,5"
+        });
+        var editableTable = new BSTable("example",{
+            $addButton: $('#new-row-button')
+        });
+        var editableTable = new BSTable("example",{
+            onEdit: function() {},
+            onBeforeDelete: function() {},
+            onDelete: function() {},
+            onAdd: function() {},
+        });
+        var editableTable = new BSTable("example",{
+            advanced: {
+              columnLabel: 'Actions',
+              buttonHTML: `<div class="btn-group pull-right">
+                <button id="bEdit" type="button" class="btn btn-sm btn-default">
+                  <span class="fa fa-edit" > </span>
+                </button>
+                <button id="bDel" type="button" class="btn btn-sm btn-default">
+                  <span class="fa fa-trash" > </span>
+                </button>
+                <button id="bAcep" type="button" class="btn btn-sm btn-default" style="display:none;">
+                  <span class="fa fa-check-circle" > </span>
+                </button>
+                <button id="bCanc" type="button" class="btn btn-sm btn-default" style="display:none;">
+                  <span class="fa fa-times-circle" > </span>
+                </button>
+              </div>`
+            }
+        });
+        editableTable.refresh();
+
+
+	</script>
+<style>
+
+
+
+    body{
+  padding:20px 20px;
+}
+
+.results tr[visible='false'],
+.no-result{
+  display:none;
+}
+
+.results tr[visible='true']{
+  display:table-row;
+}
+
+.counter{
+  padding:8px;
+  color:#ccc;
+}
+
+    table, th, td {
+  border: 1px solid black;
+}
+
+    table {
+  width: 100%;
+}
+
+    table {
+  border-collapse: collapse;
+}
+
+    th {
+  height: 70px;
+}
+
+    td {
+  height: 50px;
+  vertical-align: bottom;
+}
+
+    th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+    tr:hover {background-color: #f5f5f5;}
+
+    tr:nth-child(even) {background-color: #f2f2f2;}
+
+    th {
+  background-color: #68dff0;
+  color: white;
+}
+</style>
+
+      <!--footer end-->
+  </section>
+    <div class="container"></div>
+    <script src="js/app.js"></script>
+
+  <!--main content end-->
+      <!--footer start-->
+      <footer class="site-footer">
+          <div class="text-center">
+              2021 - NICHE
+              <a href="index#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer>
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.15/api/row().show().js"></script>
+<script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.js"></script>

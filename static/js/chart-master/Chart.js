@@ -492,7 +492,7 @@ window.Chart = function(context){
 		var maxSize, scaleHop, calculatedScale, labelHeight, scaleHeight, valueBounds, labelTemplateString;	
 			
 		//If no labels are defined set to an empty array, so referencing length for looping doesn't blow up.
-		if (!data.labels) data.labels = [];
+		if (!data.labels) data.labels = ["Bleach", "MTBC", "Wipe", "Triggers", "CC+SS"];
 		
 		calculateDrawingSizes();
 

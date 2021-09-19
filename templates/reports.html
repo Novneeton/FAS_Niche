@@ -18,14 +18,8 @@
     <!-- Custom styles for this template -->
     <link href="/static/css/style.css" rel="stylesheet">
     <link href="/static/css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/lineicons/style.css">
 
-      <script lang="javascript" href="/node_modules/jquery/dist/jquery.js"></script>
-    <script lang="javascript" src="https://cdn.jsdelivr.net/npm/xlsx@0.14.3/dist/xlsx.full.min.js"></script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-
-    <![endif]-->
   </head>
 
   <body>
@@ -42,28 +36,10 @@
             <!--logo start-->
             <a href="index.html" class="logo"><b>NICHE</b></a>
             <!--logo end-->
-            <div class="nav notify-row" id="top_menu">
-                <!--  notification start -->
-                <ul class="nav top-menu">
-                    <!-- settings start -->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-                            <i class="fa fa-tasks"></i>
-                            <span class="badge bg-theme"></span>
-                        </a>
-                        <ul class="dropdown-menu extended tasks-bar">
-                            <li class="external">
-                                <a href="#">No Tasks</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- settings end -->
-                </ul>
-                <!--  notification end -->
-            </div>
+
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="/templates/login">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -78,57 +54,25 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
 
-              	  <p class="centered"><a href="profile.html"><img src="/static/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href=""><img src="/static/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Admin</h5>
 
                   <li class="mt">
-                      <a class="active" href="index">
+                      <a class="active" href="/templates/login_data">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:" >
-                          <i class="fa fa-desktop"></i>
-                          <span>Templates</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="templates">Create/Edit Templates</a></li>
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-tasks"></i>
-                          <span>History</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="form_component">Activities</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-th"></i>
                           <span>Database</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="basic_table">Database View</a></li>
-                          <li><a  href="create_collection">Create a Collection</a></li>
+                          <li><a  href="/templates/basic_table">Database View</a></li>
                       </ul>
                   </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-cogs"></i>
-                          <span>Settings</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="admin_settings">Admin Settings</a></li>
-                          <li><a  href="help">Support</a></li>
-                      </ul>
-                  </li>
-
               </ul>
               <!-- sidebar menu end-->
           </div>
@@ -141,109 +85,76 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-      		<div class="row mt">
-          		<div class="col-lg-12">
+          	<div class="row">
+                <div class="column">
+                  <div class="form-panel">
 
-					<! -- 2ND ROW OF PANELS -->
-					<div class="row">
-						<! -- TODO PANEL -->
-                        <div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="steps pn">
-							    <input id='op1' name='op1' type='checkbox' checked/>
-							    <label for='op1'>Clorox Report 1</label>
-							    <input id='op2' name='op2' type='checkbox'/>
-							    <label for='op2'>Clorox Report 2</label>
-							    <input id='op3' name='op3' type='checkbox'/>
-							    <label for='op3'>Clorox Report 3</label>
+                <form class="form-horizontal style-form">
+                <div class="form-group">
 
-							    <input class = 'button1'type='submit' value='Download!' id='submit1' onchange="download(this)"/>
-
-                                <input class = 'button2 'type='submit' value='view!' id="view_reports"/>
-                                 <script>
-                                function download(file, text) {
-
-                                    //creating an invisible element
-                                    var element = document.createElement('a');
-                                    element.setAttribute('href',
-                                    'data:text/plain;charset=utf-8, '
-                                    + encodeURIComponent(text));
-                                    element.setAttribute('download', file);
-
-                                    // Above code is equivalent to
-                                    // <a href="path of file" download="file name">
-
-                                    document.body.appendChild(element);
-
-                                    //onClick property
-                                    element.click();
-
-                                    document.body.removeChild(element);
-                                }
-
-                                // Start file download.
-                                document.getElementById("submit1")
-                                .addEventListener("click", function() {
-                                    // Generate download of hello.txt
-                                    // file with some content
-                                    var text = document.getElementById("text").value;
-                                    var filename = "https://drive.google.com/file/d/1vI_AuLcAVVMvvSCq9rRVadcmUkTJ7679/view?usp=sharing";
-
-                                    download(filename, text);
-                                }, false);
-                             </script>
-							</div>
-						</div><! --/col-md-4 -->
-
-                        <div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="steps pn">
-							    <input id='op1' name='op1' type='checkbox' checked/>
-							    <label for='op1'>Nestle Report 1</label>
-							    <input id='op2' name='op2' type='checkbox'/>
-							    <label for='op2'>Nestle Report 2</label>
-							    <input id='op3' name='op3' type='checkbox'/>
-							    <label for='op3'>Nestle Report 3</label>
-                                <a href="https://drive.google.com/file/d/1mza-HdNS9L3Pil_eyNBukiW9wWF4usb1/view?usp=sharing" download="clorox_empty.csv">
-							    <input class = 'button1'type='submit' value='Download!' id='submit1' onchange="download(this)"/>
-                                <input class = 'button2 'type='submit' value='view!' id="view_reports"/>
-                                    </a>
-							</div>
-						</div><! --/col-md-4 -->
-
-                        <div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="steps pn">
-							    <input id='op1' name='op1' type='checkbox' checked/>
-							    <label for='op1'>Reliance Report 1</label>
-							    <input id='op2' name='op2' type='checkbox'/>
-							    <label for='op2'>Reliance Report 2</label>
-							    <input id='op3' name='op3' type='checkbox'/>
-							    <label for='op3'>Reliance Report 3</label>
-							    <a href="https://drive.google.com/file/d/1mza-HdNS9L3Pil_eyNBukiW9wWF4usb1/view?usp=sharing" download="clorox_empty.csv">
-							    <input class = 'button1'type='submit' value='Download!' id='submit1' onchange="download(this)"/>
-                                <input class = 'button2 'type='submit' value='view!' id="view_reports"/>
-                                    </a>
-							</div>
-						</div><! --/col-md-4 -->
-					</div><! --/END 2ND ROW OF PANELS -->
-
-          		</div>
+                  <div class="col-sm-10">
+                      <h4><i class="fa fa-angle-right"></i> {{ output_data}} </h4>
+                  </div>
                 </div>
+                </form>
+            </div><!-- /row -->
+          </div>
+        </div>
 
+              <div class="row" style="width: 200%;">
+
+                  <div class="col-lg-9 main-chart">
+
+                  	<div class="row mtbox">
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="li_heart"></span>
+                                <h3> New Report</h3>
+                  			</div>
+                            <button id="newreportButton" class="button" >Go to Report Creation</button>
+
+                            <script type="text/javascript">
+                                document.getElementById("newreportButton").onclick = function () {
+                                    location.href = "/templates/report_management?'client_name'=+{{ output_data }}";
+                                };
+                            </script>
+                  		</div>
+                  		<div class="col-md-2 col-sm-2 box0">
+                  			<div class="box1">
+					  			<span class="li_vallet"></span>
+                                <h3>Select Report</h3>
+                  			</div>
+                            <button id="auditorButton" class="button" disabled>Go to Report Selection</button>
+
+                            <script type="text/javascript">
+                                document.getElementById("auditorButton").onclick = function () {
+                                    location.href = "/templates/client_report?'client_name'=+{{ output_data }}";
+                                };
+                            </script>
+                  		</div>
+                  	</div><!-- /row mt -->
+                    <button class="button1" type="button" onclick="goBack()">Go Back</button>
+
+                        <script>
+                        function goBack() {
+                          window.history.back();
+                        }
+                        </script>
+                  </div><!-- /col-lg-9 END SECTION MIDDLE -->
+              </div>
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
-
       <!--main content end-->
       <!--footer start-->
-      <footer class="site-footer">
+      <footer>
           <div class="text-center">
-              2021 - Niche
-              <a href="templates.html#" class="go-top">
-                  <i class="fa fa-angle-up"></i>
-              </a>
+              2021 - NICHE
           </div>
       </footer>
       <!--footer end-->
   </section>
+
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="/static/js/jquery.js"></script>
@@ -260,15 +171,27 @@
     <!--script for this page-->
     <script type="text/javascript" src="/static/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="/static/js/gritter-conf.js"></script>
-
-  <script>
-      //custom select box
-
-      $(function(){
-          $('select.styled').customSelect();
-      });
-
-  </script>
-
   </body>
+<style>
+        .button {
+          background-color: #68dff0;
+          border: none;
+          color: white;
+          padding: 17px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+        }
+        .button1 {
+          background-color: #111313;
+          border: none;
+          color: white;
+          padding: 17px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+        }
+    </style>
 </html>

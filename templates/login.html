@@ -34,7 +34,7 @@
 	  <div id="login-page">
 	  	<div class="container">
 
-		      <form class="form-login" action="{{ url_for('login_data') }}" method="post">
+		      <form class="form-login" action="{{ url_for('/templates/login_data') }}" method="post">
 		        <h2 class="form-login-heading">NICHE SIGN IN</h2>
 		        <div class="login-wrap">
 		            <input type="text" class="form-control" name="userid" placeholder="User ID" autofocus required>
@@ -43,19 +43,10 @@
 		            <label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="recover_account.html"> Forgot Password?</a>
-
 		                </span>
 		            </label>
 		            <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
 		            <hr>
-
-		            <div class="registration">
-		                Don't have an account yet?<br/>
-		                <a class="" href="/create">
-		                    Create an account
-		                </a>
-		            </div>
-
 		        </div>
 
 		          <!-- Modal -->
