@@ -87,21 +87,18 @@
           <section class="wrapper">
 
               <div class="row" style="width: 200%;">
-
                   <div class="col-lg-9 main-chart">
-
                   	<div class="row mtbox">
-
                          <div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
 					  			<span class="li_heart"></span>
 					  			<h3>Choose Client</h3>
                   			</div>
-                            <form action="/templates/reports_options?'client_name'=+Novneet" method="post">
+                            <form action="/templates/reports_options" method="post">
                             <select name="user_name" id="user_name" required style="width:218px;" >
-
-                            <option name="A">Novneet</option>
-
+                                {% for row in output_data %}
+                                    <option name="B" >{{row['name']}}</option>
+                                {% endfor %}
                             </select>
                             <button type="submit" id="clientButton" class="button" >Go To Report Creation</button>
                             </form>

@@ -118,23 +118,6 @@
                               </div>
                    </div>
 
-                  <label>{{output_data[1]['client']}}</label>
-                   <div class="form-group">
-                          <div class="col-sm-10">
-                                 <label >Country</label>
-                                 <select id="country_1" name="country" required multiple='multiple' >
-                                    {% for country in output_data[1]['country'] %}
-                                        <option name="A" >{{country}}</option>
-                                    {% endfor %}
-                                 </select >
-                                 <label>Report</label>
-                                 <select id="report_1" name="report" required multiple='multiple' >
-                                {% for report in output_data[1]['reports'] %}
-                                    <option name="A" >{{report}}</option>
-                                {% endfor %}
-                             </select >
-                              </div>
-                   </div>
                    <h3>Add Admin Privileges</h3>
                    <div class="form-group">
                               <div class="col-sm-10">

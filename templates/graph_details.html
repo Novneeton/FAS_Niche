@@ -104,10 +104,18 @@
                           <label for="dbase" class="col-sm-2 col-sm-2 control-label">Relative</label>
                           <div class="col-sm-10">
                               <select id="dbase" name="dbase" >
-                                  {% for row in output_data[0]['grids'] %}
-                                <option>{{ row}}</option>
-                                  {% endfor %}
+
+                                <option>Grid 1</option>
+                                <option>Grid 2</option>
+
                               </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-2 col-sm-2 control-label">Grid Position</label>
+                          <div class="col-sm-10">
+                              <input type="text" id="grid_pos_x" name="function" required value="x">
+                              <input type="text" id="grid_pos_y" name="function" required value="y">
                           </div>
                         </div>
                         <div class="form-group">
@@ -123,6 +131,21 @@
                           <label for="function" class="col-sm-2 col-sm-2 control-label">Chart Name</label>
                           <div class="col-sm-10">
                               <input type="text" id="function" name="function" required>
+                          </div>
+                        </div>
+
+                      <div class="form-group">
+                          <label for="chart_type" class="col-sm-2 col-sm-2 control-label">Query Type</label>
+                          <div class="col-sm-10">
+                              <select id="query_type" name="query_type" >
+
+                                <option>Sum</option>
+                                <option>Product</option>
+                                <option>Max</option>
+                                <option>Min</option>
+                                <option>Value</option>
+
+                              </select>
                           </div>
                         </div>
 
@@ -146,8 +169,8 @@
                           </div>
                         </div>
 
-                        <button class="button2" type="button" id="newsectionbtn">Add Grid</button>
-                      <button class="button3" type="button" id="delsectionbtn">Delete Grid</button>
+                        <button class="button2" type="button" id="newsectionbtn">Add Graph</button>
+                      <button class="button3" type="button" id="delsectionbtn">Delete Graph</button>
                     </div>
 
                         <script>

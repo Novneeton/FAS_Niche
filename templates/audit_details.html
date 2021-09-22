@@ -91,11 +91,15 @@
                      <div class="form-panel">
                         <h4 class="mb"><i class="fa fa-angle-right"></i> Add Audit Dates</h4>
                         <form class="form-horizontal style-form" action="http://127.0.0.1:5000/handle_client_data?'client_name'=+{{ output_data['name'] }}" method="post">
-                          {% for row in output_data['countries'] %}
-                           <div>
                             <div class="form-group">
+                              <label for="dropdown" class="col-sm-2 col-sm-2 control-label">Country</label>
                               <div class="col-sm-10">
-                                  <h5><i class="fa fa-angle-right"></i> {{row}} </h5>
+                                  <select id="dropdown" name="country" style="width: 20%;">
+                                    <option>Select</option>
+                                      {% for row in output_data['countries'] %}
+                                        <option>{{ row }}</option>
+                                      {% endfor %}
+                                  </select >
                               </div>
                             </div>
                             <div class="form-group">
@@ -109,13 +113,15 @@
                                     <div id="outputArea"></div>
                                 </div>
                             </div>
-                          </div>
+                           <div>
+                            <button class="button2" type="button" id="newsectionbtn" href="#">Add</button>
                         <script>
                         function goBack()
                         {
                           window.history.back();
                         }
                         </script>
+                           </div>
 
                                <button class="button" name="button1" value="upload" type="submit" href="#">Save</button>
                                <button class="button1" type="button" onclick="goBack()">Go Back</button>

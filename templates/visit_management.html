@@ -19,11 +19,6 @@
     <link href="/static/css/style.css" rel="stylesheet">
     <link href="/static/css/style-responsive.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -100,14 +95,13 @@
                 <div class="form-group">
 
                   <div class="col-sm-10">
-                      <h4><i class="fa fa-angle-right"></i> {{ output_data['name']}} </h4>
+                      <h4><i class="fa fa-angle-right"></i> Madhavan </h4>
                   </div>
                 </div>
                 </form>
             </div><!-- /row -->
 
-          	<div class="row">
-                  <div class="form-panel">
+          	<div class="form-panel">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i> Create Visit</h4>
                         <form class="form-horizontal style-form" action="{{ url_for('handle_data') }}" method="post">
                         <div class="form-group">
@@ -115,18 +109,43 @@
 
                           <div class="col-sm-10">
                               <select id="dropdown" name="country" >
-                                <option>Select</option>
-                                  {% for row in output_data['countries'] %}
-                                <option>{{ row }}</option>
-                                  {% endfor %}
+                                <option>United Arab Enmirates</option>
                               </select >
                           </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="country" class="col-sm-2 col-sm-2 control-label">Select Cycle</label>
+                            <label for="cycle" class="col-sm-2 col-sm-2 control-label">Select Cycle</label>
                                 <div class="col-sm-10">
-                                        <select class="Cycle" id='secondList' name='secondList' >
+                                        <select class="Cycle" id='cycle' name='secondList' >
+                                            <option>Cycle 1</option>
+                                            <option>Cycle 2</option>
+                                            <option>Cycle 3</option>
+
+                                        </select>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="template" class="col-sm-2 col-sm-2 control-label">Select Template</label>
+                                <div class="col-sm-10">
+                                        <select id='template' name='secondList' >
+                                            <option>Template 1</option>
+                                            <option>Template 2</option>
+                                            <option>Template 3</option>
+
+                                        </select>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Visit" class="col-sm-2 col-sm-2 control-label">Select Visit</label>
+                                <div class="col-sm-10">
+                                        <select id='Visit' name='secondList' >
+                                            <option>Visit 1</option>
+                                            <option>Visit 2</option>
+                                            <option>Visit 3</option>
+
                                         </select>
                                 </div>
                         </div>
@@ -149,7 +168,6 @@
                         </script>
 
                       </form>
-                  </div>
 
           	</div><!-- /row -->
 
@@ -160,7 +178,7 @@
 
       <!--main content end-->
       <!--footer start-->
-      <footer class="site-footer">
+      <footer>
           <div class="text-center">
               NICHE-2021
           </div>

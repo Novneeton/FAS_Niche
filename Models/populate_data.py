@@ -1,6 +1,4 @@
-import boto3
 from pymongo import MongoClient
-import pandas as pd
 
 client = MongoClient(
     "mongodb+srv://Novneet:jayhanuman1@cluster0.oxi79.mongodb.net/test?ssl=true&ssl_cert_reqs=CERT_NONE")

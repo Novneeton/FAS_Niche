@@ -283,8 +283,9 @@ def report_management():
 
 @app.route('/templates/reports_options', methods=['GET', 'POST'])
 def reports_options():
+    data = request.form.to_dict(flat=False)
     form_data = request.args.to_dict(flat=False)
-    output_name = form_data["'client_name'"][0]
+    output_name = data['user_name'][0]
     return render_template('reports.html', output_data=output_name)
 
 
@@ -331,7 +332,8 @@ def role_options():
 
 @app.route('/templates/report_options')
 def report_options():
-    return render_template('report_options.html')
+    data = populate_data.get_client_data("all")
+    return render_template('report_options.html', output_data=data)
 
 
 @app.route('/templates/basic_client_table')
@@ -360,7 +362,7 @@ def graph_details():
     data = request.form.to_dict(flat=False)
     form_data = request.args.to_dict(flat=False)
     out_data, grids = [], []
-    for i in range(len(data['dbase'])):
+    for i in range(len(data['column'])):
         grids.append("Grid " + str(i+1))
     out_data.append({'client': (form_data["'client_name'"][0]).strip(), 'grids': grids})
     return render_template('graph_details.html', output_data=out_data)
@@ -384,12 +386,13 @@ def client():
 
 @app.route('/templates/visit_management')
 def visit_management():
-    form_data = request.args.to_dict(flat=False)
-    country_data = populate_data.get_client_data(form_data["'client_name'"][0])
-    all_data = populate_data.get_visit_data(form_data["'client_name'"][0])
-    output_name = {"name": form_data["'client_name'"][0],
-                   "countries": country_data, "all_data": all_data['audit_details']}
-    return render_template('visit_management.html', output_data=output_name)
+    # form_data = request.args.to_dict(flat=False)
+    # country_data = populate_data.get_client_data(form_data["'client_name'"][0])
+    # all_data = populate_data.get_visit_data(form_data["'client_name'"][0])
+    # output_name = {"name": form_data["'client_name'"][0],
+    #                "countries": country_data, "all_data": all_data['audit_details']}
+    # return render_template('visit_management.html', output_data=output_name)
+    return render_template('visit_management.html')
 
 
 @app.route('/templates/visit_reopen')
